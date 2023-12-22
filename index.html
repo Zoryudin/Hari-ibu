@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                
+                colors: {
+                    clifford: '#da373d',
+                }
+            }
+        }
+    }
+  </script>
+</head>
+<body class="bg-pink-300 relative">
+    <div class="flex relative align-middle w-[90%] h-[90%] my-10 mx-auto">
+        <img class="m-auto" src="surat.png" alt="">
+        <button class="bg-green-700 text-white px-2 py-1 absolute translate-x-10 top-[9rem] rounded-lg" id="show" onclick="modal()">Buka</button>
+    </div>
+    <div class="bg-white w-[90%] mx-auto flex flex-col invisible my-3" id="modal">
+        <h1 class="text-2xl w-[100%] font-bold  text-center">Selamat hari bunda</h1>
+        <div class= "w-[90%] mx-auto my-2 p-2 rounded-xl text-md">
+            Terimakasih bundaku untuk kasih sayang nya, perhatian nya, waktu nya, kesabaran nya, semuanya pokok nya. ini surat untuk bundaku tersayang, selamat hari ibu semoga sabar selalu meghadapi anak nya. love you <span class="font-bold">bundaku</span> dan <span class="font-bold">ayahku</span>
+            <br>
+            <br>
+            <p id="test"></p> 
+        </div>
+        <button class="bg-red-500 p-3 m-2 rounded-full font-black text-white" id="close" onclick="modal()">Close</button>
+    </div>
+
+    <script>
+        function modal(){
+            const modal = document.getElementById('modal');
+            const close = document.getElementById('close');
+            const showModal = document.getElementById('show');
+            const testElement = document.getElementById("test");
+
+            showModal.addEventListener('click', function() {
+                modal.classList.remove('invisible');
+                for (let i = 0; i < 10; i++) {
+                    testElement.innerHTML += '<p class="font-bold">I love you bunda💖</p>';
+                }
+            });
+
+            close.addEventListener('click', function() {
+                modal.classList.add('invisible');
+                
+            });
+
+        }
+    </script>
+  
+</body>
+</html>
